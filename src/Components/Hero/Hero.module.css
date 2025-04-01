@@ -1,0 +1,334 @@
+.heroSection {
+    margin-top: 7rem;
+    padding: 2rem 0;
+    background-color: #ffffff;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .content {
+    flex: 1;
+    max-width: 600px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .content.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .heading {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #0f172a;
+    margin-bottom: 1.5rem;
+  }
+  
+  .animateText {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation-name: slideUpFade;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  
+  .subheading {
+    font-size: 1.25rem;
+    color: #64748b;
+    margin-bottom: 2.5rem;
+  }
+  
+  .fadeIn {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  
+  /* Hidden file input */
+  .hiddenInput {
+    display: none;
+  }
+  
+  .uploadButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background-color: #0f172a;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 150px;
+    margin-right: 12rem;
+  }
+  
+  .uploadButton:hover:not(:disabled) {
+    background-color: #1e293b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .uploadButton:disabled {
+    background-color: #334155;
+    cursor: not-allowed;
+  }
+  
+  .scaleIn {
+    opacity: 0;
+    transform: scale(0.9);
+    animation-name: scaleIn;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+  }
+  
+  .uploadIcon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .bounce {
+    animation: bounce 2s infinite;
+    animation-delay: 2s;
+  }
+  
+  /* Spinner for upload status */
+  .spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+  }
+  
+  /* File info display */
+  .fileInfo {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .fileName {
+    font-size: 0.9rem;
+    color: #10b981;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    animation: fadeIn 0.5s ease;
+    margin: 0;
+  }
+  
+  .checkmark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background-color: #10b981;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.7rem;
+  }
+  
+  /* Reset button */
+  .resetButton {
+    background: none;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .resetButton:hover {
+    background-color: #f1f5f9;
+    color: #ef4444;
+  }
+  
+  .imageContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .imageContainer.slideIn {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .imageWrapper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: transform 0.5s ease;
+  }
+  
+  .imageWrapper:hover {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  
+  .heroImage {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .imageWrapper:hover .heroImage {
+    transform: scale(1.03);
+  }
+  
+  /* Animation keyframes */
+  @keyframes slideUpFade {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scaleIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-5px);
+    }
+    60% {
+      transform: translateY(-3px);
+    }
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 1024px) {
+    .heading {
+      font-size: 3rem;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .content {
+      order: 1;
+      max-width: 100%;
+    }
+    
+    .imageContainer {
+      order: 0;
+      max-width: 100%;
+      margin-bottom: 2rem;
+      transform: translateY(40px);
+    }
+    
+    .imageContainer.slideIn {
+      transform: translateY(0);
+    }
+    
+    .heading {
+      font-size: 2.5rem;
+    }
+    
+    .uploadButton {
+      margin: 0 auto;
+    }
+  
+    .fileInfo {
+      justify-content: center;
+    }
+    
+    .imageWrapper {
+      transform: perspective(1000px) rotateX(-5deg);
+    }
+    
+    .imageWrapper:hover {
+      transform: perspective(1000px) rotateX(0deg);
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .heading {
+      font-size: 2rem;
+    }
+    
+    .subheading {
+      font-size: 1rem;
+    }
+    
+    .uploadButton {
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+    }
+  }

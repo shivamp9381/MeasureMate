@@ -1,0 +1,419 @@
+.banner {
+    width: 100%;
+    background-color: white;
+    font-family: 'Inter', sans-serif;
+    padding: 60px 0;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .contentContainer {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  .textSection {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .imageSection {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 1s ease, transform 1s ease;
+    transition-delay: 0.3s;
+  }
+  
+  .imageContainer {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+  }
+  
+  .imageContainer:hover {
+    transform: translateY(-5px) scale(1.02);
+  }
+  
+  .bannerImage {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 8s ease;
+  }
+  
+  .imageContainer:hover .bannerImage {
+    transform: scale(1.05);
+  }
+  
+  .mainHeadline {
+    display: block;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0;
+    line-height: 1.1;
+  }
+  
+  .headline {
+    margin: 0;
+    position: relative;
+  }
+  
+  .subHeadline {
+    display: block;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, #1a1a1a 0%, #444 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .underline {
+    width: 0;
+    height: 4px;
+    background-color: #ff7b54;
+    margin-top: 12px;
+    margin-left: auto;
+    border-radius: 2px;
+    transition: width 1.2s ease;
+    transition-delay: 0.5s;
+  }
+  
+  .animate .underline {
+    width: 100px;
+  }
+  
+  .description {
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    margin: 24px 0;
+    line-height: 1.6;
+    max-width: 90%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition-delay: 0.2s;
+  }
+  
+  .highlight {
+    position: relative;
+    color: #ff7b54;
+    font-weight: 600;
+    padding: 0 2px;
+    z-index: 1;
+  }
+  
+  .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: rgba(255, 123, 84, 0.2);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease 1s;
+  }
+  
+  .animate .highlight::after {
+    transform: scaleX(1);
+  }
+  
+  .featuresRow {
+    display: flex;
+    margin: 30px 0;
+    gap: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition-delay: 0.4s;
+  }
+  
+  .featureItem {
+    display: flex;
+    align-items: center;
+  }
+  
+  .fadeInItem {
+    opacity: 0;
+    transform: translateY(15px);
+    animation-fill-mode: forwards;
+  }
+  
+  .animate .fadeInItem {
+    animation: fadeInUp 0.5s ease forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .featureIcon {
+    background-color: #1a1a1a;
+    color: white;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .featureIcon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .webIcon {
+    background-color: white;
+    color: #1a1a1a;
+    border: 2px solid #1a1a1a;
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .webIcon:hover {
+    transform: scale(1.1);
+    background-color: #1a1a1a;
+    color: white;
+  }
+  
+  .tryButton {
+    background-color: white;
+    color: #ff7b54;
+    border: 2px solid #ff7b54;
+    border-radius: 30px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 15px;
+    transition: all 0.4s ease;
+    max-width: fit-content;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease, background-color 0.3s ease, color 0.3s ease;
+    transition-delay: 0.6s;
+    z-index: 1;
+  }
+  
+  .tryButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff7b54;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    z-index: -1;
+  }
+  
+  .tryButton:hover {
+    color: white;
+  }
+  
+  .tryButton:hover::before {
+    transform: translateX(0);
+  }
+  
+  .arrow {
+    margin-left: 8px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .tryButton:hover .arrow {
+    transform: translateX(5px);
+  }
+  
+  /* Make elements visible when they enter viewport */
+  .visible, .animate .animatedElement {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  
+  /* Comprehensive responsive styles */
+  @media (max-width: 1200px) {
+    .mainHeadline, .subHeadline {
+      font-size: 2.4rem;
+    }
+    
+    .banner {
+      padding: 50px 0;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .mainHeadline, .subHeadline {
+      font-size: 2.2rem;
+    }
+    
+    .description {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .contentContainer {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+    
+    .textSection, .imageSection {
+      flex: none;
+      width: 100%;
+    }
+    
+    .imageSection {
+      margin-bottom: 40px;
+      transform: translateY(40px);
+    }
+    
+    .description {
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .underline {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .featuresRow {
+      justify-content: center;
+    }
+    
+    .tryButton {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .mainHeadline, .subHeadline {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .banner {
+      padding: 40px 0;
+    }
+    
+    .contentContainer {
+      padding: 0 20px;
+    }
+    
+    .mainHeadline, .subHeadline {
+      font-size: 1.7rem;
+    }
+    
+    .featuresRow {
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    
+    .tryButton {
+      padding: 12px 24px;
+      font-size: 0.9rem;
+    }
+    
+    .description {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .mainHeadline, .subHeadline {
+      font-size: 1.5rem;
+    }
+    
+    .featuresRow {
+      gap: 10px;
+    }
+    
+    .featureIcon, .webIcon {
+      font-size: 0.8rem;
+      padding: 6px 10px;
+    }
+    
+    .webIcon {
+      height: 30px;
+      width: 30px;
+    }
+  }
+  
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    .banner {
+      background-color: #121212;
+    }
+    
+    .mainHeadline {
+      color: #f0f0f0;
+    }
+    
+    .subHeadline {
+      background: linear-gradient(90deg, #f0f0f0 0%, #aaa 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    
+    .description {
+      color: #d0d0d0;
+    }
+    
+    .webIcon {
+      background-color: #121212;
+      color: #f0f0f0;
+      border-color: #f0f0f0;
+    }
+    
+    .webIcon:hover {
+      background-color: #f0f0f0;
+      color: #121212;
+    }
+    
+    .imageContainer {
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+  }

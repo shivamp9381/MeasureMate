@@ -1,0 +1,239 @@
+.footer {
+    background-color: #f6f6f6;
+    padding: 60px 0 40px;
+    font-family: 'Poppins', sans-serif;
+    color: #666;
+    position: relative;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footerSection {
+    flex: 1;
+    padding: 0 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .logoContainer {
+    margin-bottom: 24px;
+    max-width: 220px;
+  }
+  
+  .footerLogo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .footerLogo:hover {
+    transform: scale(1.05);
+  }
+  
+  .footerText {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  
+  .footerHeading {
+    color: #555;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 24px;
+    position: relative;
+    padding-bottom: 10px;
+  }
+  
+  .footerHeading:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, #666, #ddd);
+    border-radius: 2px;
+  }
+  
+  .footerLinks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footerLinks li {
+    margin-bottom: 14px;
+    transition: transform 0.2s ease;
+  }
+  
+  .footerLinks li:hover {
+    transform: translateX(5px);
+  }
+  
+  .footerLinks a {
+    color: #666;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.2s ease;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .footerLinks a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #333;
+    transition: width 0.3s ease;
+  }
+  
+  .footerLinks a:hover {
+    color: #333;
+  }
+  
+  .footerLinks a:hover:after {
+    width: 100%;
+  }
+  
+  .socialIcons {
+    display: flex;
+    gap: 14px;
+    margin-top: 16px;
+  }
+  
+  .socialIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #e5e5e5;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .socialIcon:hover {
+    background-color: #d5d5d5;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .fbIcon,
+  .linkedinIcon,
+  .instaIcon,
+  .twitterIcon,
+  .tiktokIcon {
+    width: 18px;
+    height: 18px;
+    fill: #666;
+    transition: fill 0.3s ease;
+  }
+  
+  .socialIcon:hover .fbIcon,
+  .socialIcon:hover .linkedinIcon,
+  .socialIcon:hover .instaIcon,
+  .socialIcon:hover .twitterIcon,
+  .socialIcon:hover .tiktokIcon {
+    fill: #444;
+  }
+  
+  .divider {
+    width: 1px;
+    background-color: #ddd;
+    margin: 0 15px;
+  }
+  
+  .copyright {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 13px;
+    color: #888;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 992px) {
+    .container {
+      flex-wrap: wrap;
+    }
+    
+    .footerSection {
+      flex: 0 0 calc(50% - 30px);
+      margin-bottom: 40px;
+    }
+    
+    .divider {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .footer {
+      padding: 40px 0 30px;
+    }
+    
+    .container {
+      flex-direction: column;
+    }
+    
+    .footerSection {
+      flex: 1 0 100%;
+      margin-bottom: 30px;
+      padding: 0;
+    }
+    
+    .divider {
+      width: 100%;
+      height: 1px;
+      margin: 20px 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 15px;
+    }
+    
+    .socialIcons {
+      justify-content: center;
+    }
+    
+    .footerText,
+    .footerHeading,
+    .footerLinks {
+      text-align: center;
+    }
+    
+    .footerHeading:after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .footerLinks li {
+      margin-bottom: 12px;
+    }
+    
+    .logoContainer {
+      margin: 0 auto 24px;
+      text-align: center;
+    }
+    
+    .footerLinks li:hover {
+      transform: none;
+    }
+  }
