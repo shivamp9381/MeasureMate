@@ -32,7 +32,7 @@ const Navbar = () => {
           <a href="/login" className="navLink loginBtn">
             Login
           </a>
-          <a href="/tryon" className="navLink tryOnBtn">
+          <a href="http://127.0.0.1:5000/video_feed" className="navLink tryOnBtn">
             3D TryOn
           </a>
         </div>
